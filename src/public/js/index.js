@@ -4,7 +4,7 @@ import 'bootstrap';
 
 
 async function get_details(place, start_date, end_date) {
-    const api_path = 'http://localhost:8080/page2?';
+    const api_path = 'http://localhost:8081/page2?';
     const api_place = 'place=' + place;
     const api_sd = '&date_start=' + start_date;
     const api_ed = '&date_end=' + end_date;
