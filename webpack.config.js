@@ -2,6 +2,7 @@ const path = require("path")
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin')
+const WorkboxPlugin = require('workbox-webpack-plugin');
 module.exports = {
     mode: "production",
     entry: './src/public/js/index.js',
@@ -26,7 +27,8 @@ module.exports = {
         new HtmlWebPackPlugin({
             template: "./src/public/index.html",
             filename: "./index.html",
-        })
+        }),
+        new WorkboxPlugin.GenerateSW()
     ]
 }
 new CleanWebpackPlugin({
