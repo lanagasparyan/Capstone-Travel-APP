@@ -2,6 +2,39 @@
 
 The goal of this project is building a travel application. It pulls in multiple types of data, from different sources and occasionally one API will be required to get data from another API.
 
+## How to run the project
+
+### Install dependencies
+To install the dependecies run the command
+```
+npm install
+```
+
+### Running the tests
+
+For testing run
+
+```
+npm run test
+```
+
+### Starting the webapp and server
+
+To run the project open the terminal in the root directory and run the command
+
+```
+npm run build-dev
+```
+This will start client at `8080`
+
+After that:
+```
+npm run start
+```
+This will start server at `8081`
+
+Now visit your localhost on port number `8080` in the browser to run the application
+
 
 ## What we will cover
 
@@ -24,3 +57,5 @@ Following sections have been added:
 
 - Add end date and display length of trip.
 - Pull in an image for the country from Pixabay API when the entered location brings up no results (good for obscure localities).
+
+

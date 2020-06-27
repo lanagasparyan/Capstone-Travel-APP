@@ -1,5 +1,10 @@
+// configuring env
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const fetch = require("node-fetch");
+
 /* Dependencies */
 const cors = require('cors');
 
@@ -42,8 +47,9 @@ function titleCase(string) {
 async function get_lat_long(place) {
     api_path = 'http://api.geonames.org/searchJSON?q=';
     api_params = '&maxRows=10&username=';
-    api_key = 'lanako';
-    const url = api_path + place + api_params + api_key
+    api_key = process.env.USERNAME;
+    url = api_path + place + api_params + api_key
+    console.log(url)
     return fetch(url)
         .then(async function(response) {
             return response.json();
@@ -55,11 +61,11 @@ async function get_lat_long(place) {
 }
 
 function get_weather(place, lat, long) {
-    api_path = 'https://api.weatherbit.io/v2.0/current?'
-    api_params = '&lat=' + lat + '&lon=' + long
-    API_KEY = "&key=e27fc55be3b7427b86e57893e088febd"
-    const url_weather = api_path + api_params + API_KEY
-
+    api_path = 'https://api.weatherbit.io/v2.0/current?';
+    api_params = '&lat=' + lat + '&lon=' + long;
+    API_KEY = '&key=' + process.env.WEATHER_KEY;
+    url_weather = api_path + api_params + API_KEY;
+    console.log(url_weather)
     return fetch(url_weather)
         .then(response => {
             return response.json();
@@ -114,7 +120,9 @@ const countdown = (start, end) => {
 
 
 async function get_Image(place) {
-    return await searchImages.searchImages("17003914-2beacaf9d125edaefc4659387", place).then(output => {
+    pixabay_key = process.env.PIXABAY_KEY
+    console.log(pixabay_key)
+    return await searchImages.searchImages(pixabay_key, place).then(output => {
         console.log(output)
         return output.hits[0].largeImageURL
     });
@@ -149,5 +157,4 @@ app.get('/page2', page2)
 
 app.listen(8081, () => {
     console.log('Listening at 8081.')
-
 })
