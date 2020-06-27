@@ -1,0 +1,109 @@
+body {
+    height: 100vh;
+    background: url('../accets/images/travel.jpeg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    align-content: flex-start;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+#navbar {
+    background-color: url('../accets/images/photo-1504542982118-59308b40fe0c.jpeg');
+    background-position: center;
+}
+
+.header {
+    font-size: 3vw;
+    font-weight: bolder;
+    font-family: fantasy;
+    margin-left: 100px;
+}
+
+.input {
+    font-weight: bold;
+    font-family: fantasy;
+    margin-left: 20px;
+    margin-top: 120px;
+}
+
+.output {
+    visibility: hidden;
+    font-family: fantasy;
+    margin-left: 40vw;
+}
+
+footer {
+    margin-top: 170px;
+    background: rgba(10, 26, 37, 0.493);
+    padding: 1em;
+    color: #fff;
+}
+
+#pixpic {
+    float: right;
+}
+
+#pic_url {
+    width: 350px;
+    height: 250px;
+    border: 3px solid rgb(11, 10, 10);
+    border-radius: 7%;
+    background: url('../accets/images/travel.jpeg');
+    padding: 15px 25px;
+    margin-right: 8px;
+    margin-bottom: 20px;
+    float: right;
+}
+
+img:hover {
+    animation: shake 0.5s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes shake {
+    0% {
+        transform: translate(1px, 1px) rotate(0deg);
+    }
+    10% {
+        transform: translate(-1px, -2px) rotate(-1deg);
+    }
+    20% {
+        transform: translate(-3px, 0px) rotate(1deg);
+    }
+    30% {
+        transform: translate(3px, 2px) rotate(0deg);
+    }
+    40% {
+        transform: translate(1px, -1px) rotate(1deg);
+    }
+    50% {
+        transform: translate(-1px, 2px) rotate(-1deg);
+    }
+    60% {
+        transform: translate(-3px, 1px) rotate(0deg);
+    }
+    70% {
+        transform: translate(3px, 1px) rotate(-1deg);
+    }
+    80% {
+        transform: translate(-1px, -1px) rotate(1deg);
+    }
+    90% {
+        transform: translate(1px, 2px) rotate(0deg);
+    }
+    100% {
+        transform: translate(1px, -2px) rotate(-1deg);
+    }
+}
+
+.page__footer p {
+    color: #fff;
+}
+
+@media screen and (min-width: 576px) {
+    .jumbotron {
+        padding: 8rem 2rem;
+    }
+}
