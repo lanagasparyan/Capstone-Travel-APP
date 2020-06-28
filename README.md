@@ -51,6 +51,13 @@ Geonames API - Geographical database from which the location
 Weatherbit API - Weather API 
 Pixabay API - free images and videos
 
+- USERNAME=<>
+- WEATHER_KEY=<>
+- PIXABAY_KEY=<>
+
+API Key or username and a baseUrl  are in an .env file.  USERNAME  for the Geonames API,  and WEATHER_KEY for the Weatherbit API & PIXABAY_KEY  for the Pixabay API
+
+
 ## Extend your Project/Ways to Stand Out 
 
 Following sections have been added:

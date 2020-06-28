@@ -20,7 +20,7 @@ const searchImages = require('pixabay-api');
 
 const app = express();
 app.use(cors());
-app.use(express.static('public'));
+app.use(express.static('dist'));
 
 app.use(bodyParser.urlencoded({ extended: true }))
 
@@ -46,10 +46,10 @@ function titleCase(string) {
 
 
 async function get_lat_long(place) {
-    api_path = 'http://api.geonames.org/searchJSON?q=';
-    api_params = '&maxRows=10&username=';
-    api_key = process.env.USERNAME;
-    url = api_path + place + api_params + api_key
+    let api_path = 'http://api.geonames.org/searchJSON?q=';
+    let api_params = '&maxRows=10&username=';
+    let api_key = process.env.USERNAME;
+    let url = api_path + place + api_params + api_key
     console.log(url)
     return fetch(url)
         .then(async function(response) {
@@ -62,16 +62,16 @@ async function get_lat_long(place) {
 }
 
 function get_weather(place, lat, long) {
-    api_path = 'https://api.weatherbit.io/v2.0/current?';
-    api_params = '&lat=' + lat + '&lon=' + long;
-    API_KEY = '&key=' + process.env.WEATHER_KEY;
-    url_weather = api_path + api_params + API_KEY;
+    let api_path = 'https://api.weatherbit.io/v2.0/current?';
+    let api_params = '&lat=' + lat + '&lon=' + long;
+    let API_KEY = '&key=' + process.env.WEATHER_KEY;
+    let url_weather = api_path + api_params + API_KEY;
     console.log(url_weather)
     return fetch(url_weather)
         .then(response => {
             return response.json();
         }).then(data => {
-            c = data.data[0]
+            let c = data.data[0]
             return [place, lat, long, c.temp]
         });
 
@@ -121,6 +121,7 @@ const countdown = (start, end) => {
 
 
 async function get_Image(place) {
+    let pixabay_key = ""
     pixabay_key = process.env.PIXABAY_KEY
     console.log(pixabay_key)
     return await searchImages.searchImages(pixabay_key, place).then(output => {
@@ -159,3 +160,5 @@ app.get('/page2', page2)
 app.listen(8081, () => {
     console.log('Listening at 8081.')
 })
+module.exports = { app, get_lat_long };
+// module.exports = get_lat_long;

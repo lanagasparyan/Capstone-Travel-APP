@@ -20,20 +20,20 @@ async function get_details(place, start_date, end_date) {
 
 
 
-
-document.getElementById("go").addEventListener("click", function() {
-    console.log("Hello")
-    const pl = document.getElementById('place').value;
-    const sd = document.getElementById('date_start').value;
-    const ed = document.getElementById('date_end').value;
-    get_details(pl, sd, ed).then(res => {
-        document.getElementById('new_place').textContent = res.new_place;
-        document.getElementById('weather').textContent = res.weather;
-        document.getElementById('start_trip').textContent = res.start_trip;
-        document.getElementById('end_trip').textContent = res.end_trip;
-        document.getElementById('days').textContent = res.days;
-        document.getElementById('pic_url').src = res.pic_url;
-        document.getElementById('hide').style.visibility = 'visible';
-
-    })
+document.addEventListener('DOMContentLoaded', () => {
+    document.getElementById("go").addEventListener("click", function() {
+        console.log("Hello")
+        const pl = document.getElementById('place').value;
+        const sd = document.getElementById('date_start').value;
+        const ed = document.getElementById('date_end').value;
+        get_details(pl, sd, ed).then(res => {
+            document.getElementById('new_place').textContent = res.new_place;
+            document.getElementById('weather').textContent = res.weather;
+            document.getElementById('start_trip').textContent = res.start_trip;
+            document.getElementById('end_trip').textContent = res.end_trip;
+            document.getElementById('days').textContent = res.days;
+            document.getElementById('pic_url').src = res.pic_url;
+            document.getElementById('hide').style.visibility = 'visible';
+        })
+    });
 });

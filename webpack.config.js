@@ -1,4 +1,3 @@
-const path = require("path")
 const webpack = require("webpack")
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HtmlWebPackPlugin = require('html-webpack-plugin')

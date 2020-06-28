@@ -2,10 +2,10 @@ const path = require('path');
 const webpack = require('webpack');
 const HTMLWebPackPlugin = require('html-webpack-plugin');
 const WorkboxPlugin = require('workbox-webpack-plugin');
-
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 module.exports = {
     entry: './src/public/js/index.js',
-    mode: 'development',
+    mode: 'production',
     output: {
         libraryTarget: 'var',
         library: 'Public'
@@ -18,11 +18,15 @@ module.exports = {
             },
             {
                 test: /\.css$/,
-                use: ['style-loader', 'css-loader']
+                use: ['style-loader', 'css-loader'],
+                plugins: [new MiniCssExtractPlugin()]
             },
             {
                 test: /\.(scss)$/,
+
                 use: [{
+                    plugins: [new MiniCssExtractPlugin()],
+
                     loader: 'style-loader', // inject CSS to page
                 }, {
                     loader: 'css-loader', // translates CSS into CommonJS modules
