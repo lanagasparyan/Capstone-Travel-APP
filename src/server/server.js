@@ -28,13 +28,6 @@ app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
     // Start up an instance of app
 
-// set ejs as rendering engine
-app.set('view engine', 'ejs');
-
-function page1(req, res) {
-    res.render("index.ejs")
-}
-
 function titleCase(string) {
     var sentence = string.toLowerCase().split(" ");
     for (var i = 0; i < sentence.length; i++) {
@@ -150,15 +143,23 @@ function page2(req, res) {
     )
 }
 
+function page1(req, res) {
+    res.send("This is a server, please use `npm run build-dev` to start a client UI<br>" +
+        "Server runs at port 8081; client(UI) runs at port 8080, and they can communicate indipendently"
 
+    )
+}
 
 
 app.get('/page2', page2)
+app.get('/', page1)
 
 
 
 app.listen(8081, () => {
     console.log('Listening at 8081.')
+    console.log('This is a server, please use `npm run build-dev` to start a client UI')
+
 })
 module.exports = { app, get_lat_long };
 // module.exports = get_lat_long;
