@@ -106,9 +106,6 @@ const countdown = (start, end) => {
 
     const daysLeft = Math.ceil(countdown / (1000 * 60 * 60 * 24));
 
-
-    console.log(daysLeft);
-
     return daysLeft;
 }
 
@@ -118,7 +115,6 @@ async function get_Image(place) {
     pixabay_key = process.env.PIXABAY_KEY
     console.log(pixabay_key)
     return await searchImages.searchImages(pixabay_key, place).then(output => {
-        console.log(output)
         return output.hits[0].largeImageURL
     });
 }
