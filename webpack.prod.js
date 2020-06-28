@@ -17,22 +17,8 @@ module.exports = {
                 loader: 'babel-loader'
             },
             {
-                test: /\.css$/,
-                use: ['style-loader', 'css-loader'],
-                plugins: [new MiniCssExtractPlugin()]
-            },
-            {
-                test: /\.(scss)$/,
-
-                use: [{
-                    plugins: [new MiniCssExtractPlugin()],
-
-                    loader: 'style-loader', // inject CSS to page
-                }, {
-                    loader: 'css-loader', // translates CSS into CommonJS modules
-                }, {
-                    loader: 'sass-loader' // compiles Sass to CSS
-                }]
+                test: /\.(sass|css|scss)$/,
+                use: [MiniCssExtractPlugin.loader, 'css-loader', 'sass-loader']
             },
             {
                 test: /\.(jpeg|png|svg|jpg|gif)$/,
@@ -44,6 +30,9 @@ module.exports = {
         new HTMLWebPackPlugin({
             template: './src/public/index.html',
             filename: 'index.html'
+        }),
+        new MiniCssExtractPlugin({
+            filename: "[name].css"
         }),
         new WorkboxPlugin.GenerateSW()
     ]
