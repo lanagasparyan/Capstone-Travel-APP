@@ -63,6 +63,12 @@ API Key or username and a baseUrl  are in an .env file.  USERNAME  for the Geona
 Following sections have been added:
 
 - Add end date and display length of trip.
+Added countdown function to display length of the trip using start and end date of the trip.
+
 - Pull in an image for the country from Pixabay API when the entered location brings up no results (good for obscure localities).
+
+- Allow user to Print their trip and/or export to PDF.
+Created Printer-friendly Pages with CSS. Added button to print the page.
+
 
 

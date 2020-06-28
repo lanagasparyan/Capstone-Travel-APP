@@ -28,16 +28,35 @@ body {
     margin-top: 120px;
 }
 
+.hover:hover {
+    background-color: rgb(228, 228, 213);
+}
+
 .output {
     visibility: hidden;
     font-family: fantasy;
-    margin-left: 40vw;
+    font-weight: bolder;
+    margin-left: 35vw;
+    margin-top: 15vw;
+}
+
+.outputData {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: lighter;
+}
+
+.outputData:hover {
+    background-color: rgb(228, 228, 213);
 }
 
 footer {
     margin-top: 170px;
     background: rgba(10, 26, 37, 0.493);
     padding: 1em;
+    color: #fff;
+}
+
+.page__footer p {
     color: #fff;
 }
 
@@ -98,8 +117,19 @@ img:hover {
     }
 }
 
-.page__footer p {
-    color: #fff;
+body {
+    margin: 2em;
+    background-color: #000;
+}
+
+
+/* override styles when printing */
+
+@media print {
+    body {
+        margin: 0;
+        color: #000;
+    }
 }
 
 @media screen and (min-width: 576px) {

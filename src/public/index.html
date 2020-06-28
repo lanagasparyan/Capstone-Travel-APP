@@ -5,7 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
+    <link rel="stylesheet" href="main.css" />
+    <link rel="stylesheet" media="print" href="print.css" />
     <title>Travel App</title>
 </head>
 
@@ -22,24 +23,25 @@
 
 
         <section class="input">
-            <input name="place" id="place" placeholder="City, Country"></input>
-            <input type="date" name="date_start" id="date_start" aria-label="Date" class="form-control col-sm-6 col-md-3 mt-1">
-            <input type="date" name="date_end" id="date_end" aria-label="Date" class="form-control col-sm-6 col-md-3 mt-1">
-            <button id="go">Go</button>
+            <input class="hover" name="place" id="place" placeholder="City, Country"></input>
+            <input class="hover" type="date" name="date_start" id="date_start" aria-label="Date" class="form-control col-sm-6 col-md-3 mt-1">
+            <input class="hover" type="date" name="date_end" id="date_end" aria-label="Date" class="form-control col-sm-6 col-md-3 mt-1">
+            <button class="hover" id="go">Go</button>
 
 
-            </form>
         </section>
 
 
         </section>
 
         <section id="hide" class="output">
-            <div> Destination: <span id="new_place"> </span> </div>
-            <div>Temperature: <span id='weather'> </span>&deg; </div>
-            <div>Trip Start: <span id='start_trip'> </span> </div>
-            <div>Trip End: <span id='end_trip'> </span> </div>
-            <div>Total Days: <span id='days'> </span> </div>
+            <div> Destination: <span class="outputData" id="new_place"> </span> </div>
+            <div>Temperature: <span class="outputData" id='weather'> </span>&deg; </div>
+            <div>Trip Start: <span class="outputData" id='start_trip'> </span> </div>
+            <div>Trip End: <span class="outputData" id='end_trip'> </span> </div>
+            <div>Total Days: <span class="outputData" id='days'> </spanclass="outputData"> </div>
+           <br>
+            <button class="hover" onclick="window.print()">Print this page</button>
             <br>
             <img id="pic_url" src="" alt="Cities" width="380px">
         </section>
